@@ -9,10 +9,10 @@ import (
 	"github.com/julienschmidt/httprouter"
 	_ "github.com/lib/pq"
 
-	"github.com/webProj/Login/lrepository"
-	"github.com/webProj/Login/lservice"
 	"github.com/webProj/Admin/repository"
 	"github.com/webProj/Admin/service"
+	"github.com/webProj/Login/lrepository"
+	"github.com/webProj/Login/lservice"
 	"github.com/webProj/delivery/http/handler"
 )
 
@@ -39,7 +39,6 @@ func main() {
 	manageDocRepo := repository.NewManageDoctorsRepository(dbconn)
 	manageDocServ := service.NewManageDoctorsService(manageDocRepo)
 	managDocHand := handler.NewManageDoctorsHandler(manageDocServ)
-	router := httprouter.New()
 	router.GET("/admin/doctors", managDocHand.GetDoctors)
 	router.GET("/admin/doctor/?id", managDocHand.GetSingleDoctor)
 	router.PUT("/admin/doctor/?id", managDocHand.UpdateDoctor)
