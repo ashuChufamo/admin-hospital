@@ -1,4 +1,4 @@
-package service
+package lservice
 
 import (
 	"github.com/webProj/Login"
