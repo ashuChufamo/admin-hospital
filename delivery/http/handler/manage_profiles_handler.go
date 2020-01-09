@@ -105,7 +105,7 @@ func (mdh *ManageProfileHandler) AddProfile(w http.ResponseWriter, r *http.Reque
 		return
 	}
 
-	p := fmt.Sprintf("/v1/admin/comments/%d", comment.ID)
+	p := fmt.Sprintf("/admin/profile/%d", comment.ID)
 	w.Header().Set("Location", p)
 	w.WriteHeader(http.StatusCreated)
 	return

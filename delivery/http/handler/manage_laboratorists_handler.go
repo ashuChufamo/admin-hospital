@@ -105,7 +105,7 @@ func (mdh *ManageLaboratoristHandler) AddLaboratorist(w http.ResponseWriter, r *
 		return
 	}
 
-	p := fmt.Sprintf("/v1/admin/comments/%d", comment.ID)
+	p := fmt.Sprintf("/admin/laboratorist/%d", comment.ID)
 	w.Header().Set("Location", p)
 	w.WriteHeader(http.StatusCreated)
 	return

@@ -105,7 +105,7 @@ func (mdh *ManagePharmasistHandler) AddPharmasist(w http.ResponseWriter, r *http
 		return
 	}
 
-	p := fmt.Sprintf("/v1/admin/comments/%d", comment.ID)
+	p := fmt.Sprintf("/admin/pharmasist/%d", comment.ID)
 	w.Header().Set("Location", p)
 	w.WriteHeader(http.StatusCreated)
 	return

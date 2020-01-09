@@ -105,7 +105,7 @@ func (mdh *ManageDoctorsHandler) AddDoctor(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	p := fmt.Sprintf("/v1/admin/comments/%d", comment.ID)
+	p := fmt.Sprintf("/admin/doctor/%d", comment.ID)
 	w.Header().Set("Location", p)
 	w.WriteHeader(http.StatusCreated)
 	return
